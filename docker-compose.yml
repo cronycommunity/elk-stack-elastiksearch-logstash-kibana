@@ -4,6 +4,7 @@ services:
         image: elasticsearch:7.7.0
         container_name: elasticsearch
         hostname: elasticsearch
+        restart: always
         environment:
             - "discovery.type=single-node"
         ports:
@@ -15,6 +16,7 @@ services:
         image: kibana:7.7.0
         container_name: kibana
         hostname: kibana
+        restart: always
         ports:
             - 5601:5601
         links:
@@ -27,6 +29,7 @@ services:
         image: logstash:7.7.0
         container_name: logstash
         hostname: logstash
+        restart: always
         ports:
             - 9600:9600
             - 8089:8089
